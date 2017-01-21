@@ -14,7 +14,8 @@ import java.io.IOException;
 public class Main extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("Hello from Servlet");
+//        resp.getWriter().println("Hello from Servlet");
+        req.getRequestDispatcher("src/main/webapp/WEB-INF/jsp/first.jsp").forward(req, resp);
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
