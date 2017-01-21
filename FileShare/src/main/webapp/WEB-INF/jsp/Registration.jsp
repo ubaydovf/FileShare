@@ -2,14 +2,15 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-			<title>Авторизация</title>
+			<title>Регистрация</title>
 	</head>
-		<h1>Авторизуйтесь</h1>
+		<h1>Зарегистрируйтесь</h1>
 	<body>
-	<form action="signup" method="post">
+	<form action="signin" method="post">
 	<label>Login <input type="text" name="login"></label> <br>
 	<label>Password <input type="password" name="password"></label><br>
-	<input type="submit" value="Войти">
+	<label>Confirm password <input type="password" name="confirmPassword"></label><br>
+	<input type="submit" value="Enter">
 	</form>
 	</body>
 </html>

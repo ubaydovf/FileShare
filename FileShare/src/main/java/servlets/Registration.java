@@ -8,17 +8,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by firdavs on 22/01/17.
+ * Created by firdavs on 21/01/17.
  */
-@WebServlet("/signin")
-public class Authorization extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/jsp/Authorization.jsp").forward(req, resp);
-    }
+@WebServlet("/signup")
+public class Registration extends HttpServlet {
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/WEB-INF/jsp/Registration.jsp").forward(req, resp);
+    }
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Пока ничего нет тут");
+        resp.getWriter().println("Your login is :" + req.getParameter("login"));
+        resp.getWriter().println("Your password is :" + req.getParameter("password"));
     }
 }
