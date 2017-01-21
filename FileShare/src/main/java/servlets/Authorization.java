@@ -10,14 +10,16 @@ import java.io.IOException;
 /**
  * Created by firdavs on 21/01/17.
  */
-@WebServlet("/main")
-public class Main extends HttpServlet {
+@WebServlet("/authorization")
+public class Authorization extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        resp.getWriter().println("Hello from Servlet");
-        req.getRequestDispatcher("src/main/webapp/WEB-INF/jsp/first.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/jsp/Authorization.jsp").forward(req, resp);
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.getWriter().println("Your login is :" + req.getParameter("login"));
+        resp.getWriter().println("Your password is :" + req.getParameter("password"));
     }
 }

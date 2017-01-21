@@ -6,7 +6,7 @@
 	</head>
 		<h1>Зарегистрируйтесь</h1>
 	<body>
-	<form action="form" method="post">
+	<form action="authorization" method="post">
 	<label>Login <input type="text" name="login"></label> <br>
 	<label>Password <input type="password" name="password"></label><br>
 	<input type="submit" value="Enter">
