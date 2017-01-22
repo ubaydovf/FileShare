@@ -6,7 +6,7 @@
 	</head>
 		<h1>Авторизуйтесь</h1>
 	<body>
-	<form action="signup" method="post">
+	<form action="signin" method="post">
 	<label>Login <input type="text" name="login"></label> <br>
 	<label>Password <input type="password" name="password"></label><br>
 	<input type="submit" value="Войти">
