@@ -15,9 +15,6 @@ import java.io.IOException;
 @WebServlet("/signup")
 public class Registration extends HttpServlet {
 
-    private String login;
-    private String password;
-    private String confirmPassword;
     private UserControl users = UserControl.getInstance();
 
     @Override
@@ -38,7 +35,7 @@ public class Registration extends HttpServlet {
                 resp.getWriter().println("Your login is: " + req.getParameter("login"));
                 resp.getWriter().println("Your password is: " + req.getParameter("password"));
             } else {
-                resp.setContentType("test/html; charset=utf-8;");
+                resp.setContentType("text/html; charset=utf-8;");
                 resp.getWriter().println("Введите правильные данные !");
             }
 

@@ -32,7 +32,7 @@ public class Authorization extends HttpServlet {
             if (check.getPassword().equals(req.getParameter("password"))) {
                 resp.getWriter().println("Success, you have been authorized");
                 resp.getWriter().println("Your login is: " + check.getLogin() + " password: " + check.getPassword());
-            }
+            } else
                 resp.getWriter().println("Incorrect Password !");
         }
 
