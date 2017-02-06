@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+ 		http://www.springframework.org/schema/beans
+ 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <import resource="loggers.xml"/>
+
+    <bean id="client" class="test.Client">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="John Wick"/>
+        <property name="greeting" value="Hello World! (from Spring properties)"/>
+    </bean>
+
+    <bean id="event" class="test.Event" scope="prototype">
+        <constructor-arg>
+            <bean class="java.util.Date"/>
+        </constructor-arg>
+        <constructor-arg>
+            <bean id="dateFormat" class="java.text.DateFormat"
+                  factory-method="getDateTimeInstance"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="app" class="test.App">
+        <constructor-arg ref="combinedLogger"/>
+        <constructor-arg ref="client"/>
+        <constructor-arg>
+            <map>
+                <entry key="INFO"
+                       value-ref="eventLogger"/>
+                <entry key="ERROR"
+                       value-ref="combinedLogger"/>
+            </map>
+        </constructor-arg>
+    </bean>
+
+
+
+</beans>
